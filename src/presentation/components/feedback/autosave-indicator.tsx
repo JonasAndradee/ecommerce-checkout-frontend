@@ -22,7 +22,7 @@ export function AutosaveIndicator({ saving }: AutosaveIndicatorProps) {
   return (
     <div className="flex items-center gap-2 text-sm text-muted-foreground">
       <Save className="h-4 w-4" />
-      <span>{saving ? "Saving..." : "Saved"}</span>
+      <span>{saving ? "Salvando..." : "Salvo"}</span>
     </div>
   );
 }
