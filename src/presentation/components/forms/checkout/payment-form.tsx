@@ -74,9 +74,6 @@ export function PaymentForm() {
                 placeholder="JOÃO DA SILVA"
               />
             </FormControl>
-            <FormDescription>
-              Use letras maiúsculas como mostrado no cartão
-            </FormDescription>
             <FormMessage />
           </FormItem>
         )}
@@ -90,10 +87,10 @@ export function PaymentForm() {
             <FormItem>
               <div className="flex items-center">
                 <FormLabel>Data de Validade</FormLabel>
-                <TooltipInfo content="Digite a data de validade no formato MM/AAAA" />
+                <TooltipInfo content="Digite a data de validade no formato MM/AA" />
               </div>
               <FormControl>
-                <MaskedInput {...field} mask="00/0000" placeholder="MM/AAAA" />
+                <MaskedInput {...field} mask="00/00" placeholder="MM/AA" />
               </FormControl>
               <FormMessage />
             </FormItem>

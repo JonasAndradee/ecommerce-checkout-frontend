@@ -13,7 +13,7 @@ export default function CheckoutLayout({
 }) {
   return (
     <div className="max-w-7xl mx-auto">
-      <header className="mt-8">
+      <header className="p-8">
         <Image alt="Malga" src={"/logo-malga.svg"} width={120} height={37} />
         E-commerce
       </header>

@@ -5,7 +5,6 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-  FormDescription,
 } from "@/presentation/components/ui/form";
 import { MaskedInput } from "@/presentation/components/ui/masked-input";
 import { TooltipInfo } from "@/presentation/components/ui/tooltip-info";
@@ -34,7 +33,11 @@ export function CustomerForm() {
                 <TooltipInfo content="Digite seu nome" />
               </div>
               <FormControl>
-                <Input {...field} placeholder="Ex: João" />
+                <MaskedInput
+                  {...field}
+                  mask={/^[A-Za-z\s]*$/}
+                  placeholder="Ex: João"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -50,7 +53,11 @@ export function CustomerForm() {
                 <TooltipInfo content="Digite seu sobrenome completo" />
               </div>
               <FormControl>
-                <Input {...field} placeholder="Ex: Silva" />
+                <MaskedInput
+                  {...field}
+                  mask={/^[A-Za-z\s]*$/}
+                  placeholder="Ex: Silva"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -192,7 +199,11 @@ export function CustomerForm() {
             <FormItem>
               <FormLabel>Estado</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Ex: SP" />
+                <MaskedInput
+                  {...field}
+                  mask={/^[A-Za-z\s]{0,2}$/}
+                  placeholder="Ex: SP"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

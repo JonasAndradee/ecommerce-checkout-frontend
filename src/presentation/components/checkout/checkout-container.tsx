@@ -107,46 +107,51 @@ function CheckoutContainerContent() {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <ScrollArea className="h-[calc(100vh-12rem)]">
-          <div className="space-y-8 pr-4">
+        <div>
+          <CartSummary />
+        </div>
+
+        <div className="space-y-8">
+          {formError && (
+            <FormFeedback
+              type="error"
+              title="Erro no Pagamento"
+              message={formError}
+            />
+          )}
+
+          {formSuccess && (
+            <FormFeedback
+              type="success"
+              title="Pagamento Concluído"
+              message={formSuccess}
+            />
+          )}
+
+          <div>
             <div className="flex justify-between items-center">
               <AutosaveIndicator />
             </div>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {formError && (
-                <FormFeedback
-                  type="error"
-                  title="Erro no Pagamento"
-                  message={formError}
-                />
-              )}
+              <ScrollArea className="h-[calc(70vh-12rem)]">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Dados do Cliente</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CustomerForm />
+                  </CardContent>
+                </Card>
 
-              {formSuccess && (
-                <FormFeedback
-                  type="success"
-                  title="Pagamento Concluído"
-                  message={formSuccess}
-                />
-              )}
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Dados do Cliente</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CustomerForm />
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Dados do Pagamento</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <PaymentForm />
-                </CardContent>
-              </Card>
-
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Dados do Pagamento</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <PaymentForm />
+                  </CardContent>
+                </Card>
+              </ScrollArea>
               <Button
                 type="submit"
                 className="w-full"
@@ -164,10 +169,6 @@ function CheckoutContainerContent() {
               </Button>
             </form>
           </div>
-        </ScrollArea>
-
-        <div>
-          <CartSummary />
         </div>
       </div>
     </>

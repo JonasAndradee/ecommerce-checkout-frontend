@@ -3,7 +3,7 @@ import {
   TransactionRequest,
   TransactionResponse,
 } from "@/domain/entities/transaction";
-import { PaymentValidation } from "./validation";
+import { PaymentValidation } from "./validation/payment-validation";
 
 export class TransactionService {
   constructor(private readonly repository: TransactionRepository) {}
