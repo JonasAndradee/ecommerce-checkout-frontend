@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { CheckoutContainer } from "@/presentation/components/checkout/checkout-container";
 import { CartProvider } from "@/presentation/contexts/cart-context";
 

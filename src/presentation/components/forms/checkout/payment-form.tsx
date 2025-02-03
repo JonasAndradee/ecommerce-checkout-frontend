@@ -131,6 +131,7 @@ export function PaymentForm() {
             </div>
             <Select
               onValueChange={(value) => field.onChange(Number(value))}
+              value={field.value?.toString()}
               defaultValue={field.value?.toString()}
             >
               <FormControl>

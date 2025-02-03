@@ -3,15 +3,8 @@ import {
   TransactionRequest,
   TransactionResponse,
 } from "@/domain/entities/transaction";
-import { TransactionStatus } from "@/domain/entities/common";
 
 export class HttpTransactionRepository implements TransactionRepository {
-  updateStatus(
-    id: string,
-    status: TransactionStatus
-  ): Promise<TransactionResponse> {
-    throw new Error("Method not implemented.");
-  }
   private readonly baseUrl = "/api/transactions";
 
   async create(transaction: TransactionRequest): Promise<TransactionResponse> {
