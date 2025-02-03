@@ -34,7 +34,7 @@ export function PaymentForm() {
       <FormField
         control={form.control}
         name="paymentMethod.card.number"
-        render={({ field: { onChange, ...field } }) => (
+        render={({ field }) => (
           <FormItem>
             <div className="flex items-center">
               <FormLabel>Número do Cartão</FormLabel>
@@ -86,19 +86,14 @@ export function PaymentForm() {
         <FormField
           control={form.control}
           name="paymentMethod.card.expirationDate"
-          render={({ field: { onChange, ...field } }) => (
+          render={({ field }) => (
             <FormItem>
               <div className="flex items-center">
                 <FormLabel>Data de Validade</FormLabel>
                 <TooltipInfo content="Digite a data de validade no formato MM/AAAA" />
               </div>
               <FormControl>
-                <MaskedInput
-                  {...field}
-                  mask="00/0000"
-                  placeholder="MM/AAAA"
-                  onChange={(e: any) => onChange(e.target.value)}
-                />
+                <MaskedInput {...field} mask="00/0000" placeholder="MM/AAAA" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -108,7 +103,7 @@ export function PaymentForm() {
         <FormField
           control={form.control}
           name="paymentMethod.card.cvv"
-          render={({ field: { onChange, ...field } }) => (
+          render={({ field }) => (
             <FormItem>
               <div className="flex items-center">
                 <FormLabel>CVV</FormLabel>
@@ -120,7 +115,6 @@ export function PaymentForm() {
                   mask="0000"
                   placeholder="123"
                   type="password"
-                  onChange={(e: any) => onChange(e.target.value)}
                 />
               </FormControl>
               <FormMessage />

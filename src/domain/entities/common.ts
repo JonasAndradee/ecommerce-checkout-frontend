@@ -1,11 +1,6 @@
-export type PaymentType = "card";
+export type DocumentType = "cpf" | "cnpj";
 export type TransactionStatus = "authorized" | "failed";
-
-export interface Item {
-  name: string;
-  quantity: number;
-  amount: number;
-}
+export type PaymentType = "card";
 
 export interface Address {
   city: string;
@@ -19,4 +14,10 @@ export interface Address {
 export interface Document {
   type: DocumentType;
   number: string;
+}
+
+export interface Item {
+  name: string;
+  quantity: number;
+  amount: number;
 }

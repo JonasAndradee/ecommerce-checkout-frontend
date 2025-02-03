@@ -68,7 +68,11 @@ export function CustomerForm() {
                 <FormLabel>Tipo de Documento</FormLabel>
                 <TooltipInfo content="Escolha CPF para pessoa física ou CNPJ para empresa" />
               </div>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select
+                onValueChange={field.onChange}
+                value={field.value}
+                defaultValue={field.value}
+              >
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Selecione o tipo de documento" />
@@ -86,7 +90,7 @@ export function CustomerForm() {
         <FormField
           control={form.control}
           name="customer.document.number"
-          render={({ field: { onChange, value, ...field } }) => (
+          render={({ field }) => (
             <FormItem>
               <div className="flex items-center">
                 <FormLabel>Número do Documento</FormLabel>
@@ -101,7 +105,6 @@ export function CustomerForm() {
               <FormControl>
                 <MaskedInput
                   {...field}
-                  value={value || ""}
                   mask={
                     form.watch("customer.document.type") === "cpf"
                       ? "000.000.000-00"
@@ -112,15 +115,8 @@ export function CustomerForm() {
                       ? "000.000.000-00"
                       : "00.000.000/0000-00"
                   }
-                  onChange={(e: any) =>
-                    onChange(e.target.value.replace(/[^0-9]/g, ""))
-                  }
                 />
               </FormControl>
-              <FormDescription>
-                Digite apenas números - a formatação será adicionada
-                automaticamente
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -210,7 +206,7 @@ export function CustomerForm() {
             <FormItem>
               <FormLabel>País</FormLabel>
               <FormControl>
-                <Input {...field} defaultValue="Brasil" {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

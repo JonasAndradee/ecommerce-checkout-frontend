@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import debounce from "lodash/debounce";
 import { StorageService } from "@/application/services/storage-service";
@@ -9,10 +9,17 @@ export function useFormAutosave(formKey: string, debounceMs = 1000) {
   const { watch, reset } = useFormContext();
   const formValues = watch();
   const initialLoadDone = useRef(false);
+  const shouldSave = useRef(true);
+  const [valuesSaved, setValuesSaved] = useState<{
+    data: any;
+    timestamp: string;
+  } | null>();
 
   const debouncedSave = useCallback(
     debounce((data: any) => {
-      storageService.save(formKey, data);
+      if (shouldSave.current) {
+        storageService.save(formKey, data);
+      }
     }, debounceMs),
     [formKey, debounceMs]
   );
@@ -21,18 +28,26 @@ export function useFormAutosave(formKey: string, debounceMs = 1000) {
     if (!initialLoadDone.current) {
       const saved = storageService.load(formKey);
       if (saved) {
-        reset(saved.data);
+        setValuesSaved(saved);
       }
       initialLoadDone.current = true;
       return;
     }
 
-    debouncedSave(formValues);
+    if (shouldSave.current) {
+      debouncedSave(formValues);
+    }
   }, [formValues, formKey, debouncedSave, reset]);
 
   const clearSavedData = useCallback(() => {
+    shouldSave.current = false;
     storageService.clear(formKey);
-  }, [formKey]);
+    reset(undefined);
 
-  return { clearSavedData };
+    setTimeout(() => {
+      shouldSave.current = true;
+    }, 0);
+  }, [formKey, reset]);
+
+  return { clearSavedData, valuesSaved };
 }

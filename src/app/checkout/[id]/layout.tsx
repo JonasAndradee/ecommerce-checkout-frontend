@@ -1,10 +1,9 @@
-// import { RootLayout } from '@/presentation/components/layout/root-layout'
-
+import { Metadata } from "next";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Checkout | Malga",
-  description: "O checkout tão rápido que você pisca e já foi",
+export const metadata: Metadata = {
+  title: "Finalizar Compra | E-commerce",
+  description: "Complete sua compra com segurança",
 };
 
 export default function CheckoutLayout({
