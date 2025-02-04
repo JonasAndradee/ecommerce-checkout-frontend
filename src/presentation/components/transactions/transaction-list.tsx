@@ -61,6 +61,7 @@ function Pagination({
             onClick={() => onPageChange(1)}
             disabled={currentPage === 1}
             className="hidden sm:inline-flex"
+            aria-label="Ir para a primeira página"
           >
             <ChevronsLeft className="h-4 w-4" />
           </Button>
@@ -71,6 +72,7 @@ function Pagination({
           size="icon"
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
+          aria-label="Ir para a página anterior"
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
@@ -87,6 +89,7 @@ function Pagination({
           size="icon"
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
+          aria-label="Ir para a próxima página"
         >
           <ChevronRight className="h-4 w-4" />
         </Button>
@@ -98,6 +101,7 @@ function Pagination({
             onClick={() => onPageChange(totalPages)}
             disabled={currentPage === totalPages}
             className="hidden sm:inline-flex"
+            aria-label="Ir para a última página"
           >
             <ChevronsRight className="h-4 w-4" />
           </Button>
@@ -109,10 +113,10 @@ function Pagination({
 
 const statusMap: Record<
   TransactionStatus,
-  { label: string; variant: "default" | "destructive" }
+  { label: string; variant: "default" | "destructive", className?: string }
 > = {
   authorized: { label: "Autorizado", variant: "default" },
-  failed: { label: "Falhou", variant: "destructive" },
+  failed: { label: "Falhou", variant: "destructive", className: "bg-red-900" },
 };
 
 export function TransactionList() {
@@ -175,7 +179,7 @@ export function TransactionList() {
                     {utilsFormat.currency(transaction.amount)}
                   </TableCell>
                   <TableCell>
-                    <Badge variant={statusMap[transaction.status].variant}>
+                    <Badge variant={statusMap[transaction.status].variant} className={statusMap[transaction.status].className}>
                       {statusMap[transaction.status].label}
                     </Badge>
                   </TableCell>

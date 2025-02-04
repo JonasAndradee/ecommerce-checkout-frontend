@@ -50,19 +50,19 @@ git clone https://github.com/JonasAndradee/ecommerce-checkout-frontend.git
 cd ecommerce-checkout-frontend
 
 # Instale as dependências
-npm install
+yarn install
 
 # Inicie o servidor de desenvolvimento
-npm run dev
+yarn dev
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
 ## 🛣️ Rotas da Aplicação
 
-- **/** - Listagem de todas as transações
-- **/checkout/{id}** - Página de checkout para realizar uma nova transação
-- **/transactions/{id}** - Visualização detalhada de uma transação específica
+- **/** - Listagem de todas as transações - [https://www.lucralyze.com.br/](https://www.lucralyze.com.br/)
+- **/checkout/{id}** - Página de checkout para realizar uma nova transação - [https://www.lucralyze.com.br/checkout/eace0041-723c-44b2-887d-631878171bbf](https://www.lucralyze.com.br/checkout/eace0041-723c-44b2-887d-631878171bbf)
+- **/transactions/{id}** - Visualização detalhada de uma transação específica - [https://www.lucralyze.com.br/transactions/eace0041-723c-44b2-887d-631878171bbf](https://www.lucralyze.com.br/transactions/eace0041-723c-44b2-887d-631878171bbf)
 
 ## 📁 Estrutura do Projeto
 
@@ -96,10 +96,10 @@ O projeto segue os princípios do Domain-Driven Design (DDD):
 
 ```bash
 # Executar testes unitários
-npm run test
+yarn test
 
 # Executar testes e2e
-npm run cypress
+yarn cypress:run
 ```
 
 ## 📡 API Endpoints

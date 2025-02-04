@@ -89,12 +89,15 @@ export function TransactionDetails({ id }: TransactionDetailsProps) {
                       ? "default"
                       : "destructive"
                   }
-                  className="text-sm"
+                  className={`text-sm ${
+                    transaction.status !== "authorized" ? "bg-red-900" : ""
+                  }`}
                 >
                   {transaction.status === "authorized"
                     ? "Autorizado"
                     : "Falhou"}
                 </Badge>
+
               </div>
               <Separator />
               <div className="flex items-center justify-between">
