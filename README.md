@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-commerce Checkout
 
-## Getting Started
+Aplicação de checkout desenvolvida com Next.js 14 para processar transações de e-commerce.
 
-First, run the development server:
+## 🚀 Tecnologias
+
+- Next.js 14
+- ReactJs 19
+- TypeScript
+- Tailwind CSS
+- Shadcn/ui
+- React Query
+- Zustand
+- Yup
+- Cypress
+- Jest
+- React Testing Library
+- React Hook Forms
+
+## 🎯 Funcionalidades
+
+### Página de Checkout
+- Lista de itens do carrinho
+- Coleta de informações do cliente
+- Processamento de pagamento
+- Validação de formulário em tempo real
+- Auto-save de formulário
+- Máscara de inputs
+- Validação de CPF/CNPJ
+
+### Listagem de Transações
+- Visualização de todas as transações
+- Filtros e busca
+- Exportação de dados
+- Paginação
+
+### Detalhes da Transação
+- Informações completas da transação
+- Gerenciamento de status
+- Histórico de transações
+
+## 🔧 Instalação
+
+### Pré-requisitos
+
+- Node.js 18.17 ou superior
+- npm ou yarn
 
 ```bash
+# Clone o repositório
+git clone [url-do-repositorio]
+
+# Entre no diretório
+cd checkout-app
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── application/        # Serviços e lógica de negócio
+│   └── services/
+├── domain/            # Entidades e interfaces
+│   ├── entities/
+│   └── repositories/
+├── infrastructure/    # Implementação de serviços externos
+│   └── http/
+└── presentation/     # Componentes e páginas
+    ├── components/
+    │   └── ui/
+    ├── contexts/
+    ├── hooks/
+    └── app/
+```
 
-## Learn More
+## 🏗️ Arquitetura
 
-To learn more about Next.js, take a look at the following resources:
+O projeto segue os princípios do Domain-Driven Design (DDD):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Camada de Domínio**: Contém as entidades e interfaces de repositório
+- **Camada de Aplicação**: Implementa a lógica de negócio e casos de uso
+- **Camada de Infraestrutura**: Lida com preocupações externas como comunicação com API
+- **Camada de Apresentação**: Gerencia componentes e interação do usuário
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧪 Testes
 
-## Deploy on Vercel
+```bash
+# Executar testes unitários
+npm run test
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Executar testes e2e
+npm run cypress
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📡 API Endpoints
+
+### Criar Transação
+- **POST** `/api/transactions`
+- Cria uma nova transação
+
+### Listar Transações
+- **GET** `/api/transactions`
+- Retorna lista de transações
+
+### Buscar Transação
+- **GET** `/api/transactions/{id}`
+- Retorna detalhes de uma transação específica
+
+## 🤝 Contribuindo
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Faça commit das mudanças (`git commit -m 'feat: nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+---
+
+Desenvolvido com 💜 durante o teste técnico.
