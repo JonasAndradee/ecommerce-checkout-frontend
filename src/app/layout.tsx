@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,15 +31,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <QueryProvider>
-          <header className="bg-gray-900 text-white py-4 px-6  items-center shadow-md items-baseline">
-            <Image
-              alt="Malga"
-              src={"/logo-malga-white.svg"}
-              width={120}
-              height={37}
-            />
-
-            <p className="text-xs font-bold">E-commerce</p>
+          <header className="bg-gray-900 text-white py-4 px-6 shadow-md flex items-center">
+            <Link href="/" className="flex flex-col items-start">
+              <Image
+                alt="Malga"
+                src={"/logo-malga-white.svg"}
+                width={120}
+                height={37}
+              />
+              <p className="text-xs font-bold">E-commerce</p>
+            </Link>
           </header>
           <div className="min-h-screen flex flex-col">
             <main className="flex-1 container mx-auto p-4">{children}</main>
