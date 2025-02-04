@@ -220,7 +220,8 @@ export function TransactionDetails({ id }: TransactionDetailsProps) {
                   Número do Cartão
                 </h3>
                 <p className="mt-1 font-medium">
-                  •••• •••• •••• {transaction.paymentMethod.card.lastDigits}
+                  {transaction.paymentMethod.card.firstDigits} •••• ••••{" "}
+                  {transaction.paymentMethod.card.lastDigits}
                 </p>
               </div>
               <div>

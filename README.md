@@ -48,10 +48,10 @@ Aplicação de checkout desenvolvida com Next.js 14 para processar transações 
 
 ```bash
 # Clone o repositório
-git clone [url-do-repositorio]
+git clone https://github.com/JonasAndradee/ecommerce-checkout-frontend.git
 
 # Entre no diretório
-cd checkout-app
+cd ecommerce-checkout-frontend
 
 # Instale as dependências
 npm install
@@ -61,6 +61,12 @@ npm run dev
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
+
+## 🛣️ Rotas da Aplicação
+
+- **/** - Listagem de todas as transações
+- **/checkout/{id}** - Página de checkout para realizar uma nova transação
+- **/transactions/{id}** - Visualização detalhada de uma transação específica
 
 ## 📁 Estrutura do Projeto
 
@@ -114,18 +120,3 @@ npm run cypress
 - **GET** `/api/transactions/{id}`
 - Retorna detalhes de uma transação específica
 
-## 🤝 Contribuindo
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Faça commit das mudanças (`git commit -m 'feat: nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT.
-
----
-
-Desenvolvido com 💜 durante o teste técnico.

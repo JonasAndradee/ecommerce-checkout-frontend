@@ -32,7 +32,11 @@ export function RestoreFormDialog({
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button variant="outline" onClick={onDiscard}>
+          <Button
+            variant="outline"
+            className="mt-2 sm:mt-0"
+            onClick={onDiscard}
+          >
             Começar do zero
           </Button>
           <Button onClick={onRestore}>Restaurar</Button>

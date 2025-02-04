@@ -32,7 +32,6 @@ export async function POST(request: Request) {
     },
   };
 
-  transactions.push(newTransaction);
   await delayPromise(2000);
   return NextResponse.json(newTransaction);
 }

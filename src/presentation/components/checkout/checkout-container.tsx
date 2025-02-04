@@ -69,7 +69,6 @@ function CheckoutContainerContent() {
     createTransaction(transaction, {
       onSuccess: (response) => {
         setFormSuccess("Pagamento realizado com sucesso!");
-        clearSavedData();
         setTimeout(() => {
           router.push(`/transactions/${response.id}`);
         }, 2000);
@@ -132,8 +131,8 @@ function CheckoutContainerContent() {
               <AutosaveIndicator />
             </div>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <ScrollArea className="h-[calc(70vh-12rem)] overflow-visible">
-                <Card>
+              <ScrollArea className="h-[calc(80vh-12rem)] overflow-visible">
+                <Card className="mb-4">
                   <CardHeader>
                     <h2 className="text-2xl font-semibold tracking-tight">
                       Dados do Cliente

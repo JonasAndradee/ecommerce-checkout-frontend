@@ -146,7 +146,7 @@ export function TransactionList() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Transações Recentes</CardTitle>
+        <CardTitle>Lista de transações</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="overflow-x-auto">
