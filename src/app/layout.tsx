@@ -1,6 +1,7 @@
+import { QueryProvider } from "@/presentation/providers/query-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { QueryProvider } from "@/presentation/providers/query-provider";
+import Image from "next/image";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,7 +29,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <header className="bg-gray-900 text-white py-4 px-6  items-center shadow-md items-baseline">
+            <Image
+              alt="Malga"
+              src={"/logo-malga-white.svg"}
+              width={120}
+              height={37}
+            />
+
+            <p className="text-xs font-bold">E-commerce</p>
+          </header>
+          <div className="min-h-screen flex flex-col">
+            <main className="flex-1 container mx-auto p-4">{children}</main>
+          </div>
+        </QueryProvider>
       </body>
     </html>
   );

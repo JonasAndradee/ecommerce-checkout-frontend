@@ -7,6 +7,7 @@ import { transactions } from "../_data/transactions";
 import { delayPromise } from "../_utils/delay";
 
 export async function GET() {
+  await delayPromise(2000);
   return NextResponse.json(transactions);
 }
 
