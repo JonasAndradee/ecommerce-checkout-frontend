@@ -52,7 +52,7 @@ export function PaymentForm() {
             <FormDescription>
               Processamos seus dados com segurança
             </FormDescription>
-            <FormMessage />
+            <FormMessage role="alert" />
           </FormItem>
         )}
       />
@@ -74,7 +74,7 @@ export function PaymentForm() {
                 placeholder="JOÃO DA SILVA"
               />
             </FormControl>
-            <FormMessage />
+            <FormMessage role="alert" />
           </FormItem>
         )}
       />
@@ -92,7 +92,7 @@ export function PaymentForm() {
               <FormControl>
                 <MaskedInput {...field} mask="00/00" placeholder="MM/AA" />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -114,7 +114,7 @@ export function PaymentForm() {
                   type="password"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -135,20 +135,24 @@ export function PaymentForm() {
               defaultValue={field.value?.toString()}
             >
               <FormControl>
-                <SelectTrigger>
+                <SelectTrigger data-testid="installments-trigger">
                   <SelectValue placeholder="Selecione o número de parcelas" />
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
                 {Array.from({ length: 12 }, (_, i) => i + 1).map((number) => (
-                  <SelectItem key={number} value={number.toString()}>
+                  <SelectItem
+                    key={number}
+                    value={number.toString()}
+                    data-testid={`installment-option-${number}`}
+                  >
                     {number}x {number === 1 ? "à vista" : "sem juros"}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
             <FormDescription>Parcele em até 12x sem juros</FormDescription>
-            <FormMessage />
+            <FormMessage role="alert" />
           </FormItem>
         )}
       />

@@ -39,7 +39,7 @@ export function CustomerForm() {
                   placeholder="Ex: João"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -59,7 +59,7 @@ export function CustomerForm() {
                   placeholder="Ex: Silva"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -81,16 +81,20 @@ export function CustomerForm() {
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger>
+                  <SelectTrigger data-testid="document-type-trigger">
                     <SelectValue placeholder="Selecione o tipo de documento" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="cpf">CPF</SelectItem>
-                  <SelectItem value="cnpj">CNPJ</SelectItem>
+                  <SelectItem value="cpf" data-testid="cpf-option">
+                    CPF
+                  </SelectItem>
+                  <SelectItem value="cnpj" data-testid="cnpj-option">
+                    CNPJ
+                  </SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -124,7 +128,7 @@ export function CustomerForm() {
                   }
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -142,7 +146,7 @@ export function CustomerForm() {
             <FormControl>
               <Input {...field} placeholder="Ex: Avenida Paulista" />
             </FormControl>
-            <FormMessage />
+            <FormMessage role="alert" />
           </FormItem>
         )}
       />
@@ -157,7 +161,7 @@ export function CustomerForm() {
               <FormControl>
                 <Input {...field} placeholder="Ex: 1000" />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -171,7 +175,7 @@ export function CustomerForm() {
               <FormControl>
                 <Input {...field} placeholder="Ex: Centro" />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -185,7 +189,7 @@ export function CustomerForm() {
               <FormControl>
                 <Input {...field} placeholder="Ex: São Paulo" />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -205,7 +209,7 @@ export function CustomerForm() {
                   placeholder="Ex: SP"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />
@@ -219,7 +223,7 @@ export function CustomerForm() {
               <FormControl>
                 <Input {...field} />
               </FormControl>
-              <FormMessage />
+              <FormMessage role="alert" />
             </FormItem>
           )}
         />

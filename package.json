@@ -9,7 +9,9 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -24,6 +26,7 @@
     "@tanstack/react-query-devtools": "^5.66.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cypress": "^14.0.1",
     "imask": "^7.6.1",
     "lodash": "^4.17.21",
     "lucide-react": "^0.474.0",

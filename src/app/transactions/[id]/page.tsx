@@ -1,18 +1,16 @@
 import { TransactionDetails } from "@/presentation/components/transactions/transaction-details";
+import { Metadata } from "next";
 
-interface TransactionDetailsPageProps {
-  params: { id: string };
-}
+export const metadata: Metadata = {
+  title: "Detalhes da transação | E-commerce",
+  description: "Informação detalhada sobre a transação",
+};
 
 export default async function TransactionDetailsPage({
   params,
-}: TransactionDetailsPageProps) {
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
-
-  return (
-    <>
-      <h1 className="text-3xl font-bold mb-8">Detalhes da Transação</h1>
-      <TransactionDetails id={id} />
-    </>
-  );
+  return <TransactionDetails id={id} />;
 }

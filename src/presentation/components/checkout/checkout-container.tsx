@@ -19,7 +19,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
 } from "@/presentation/components/ui/card";
 import { useCart } from "@/presentation/contexts/cart-context";
 import { useCreateTransaction } from "@/presentation/hooks/use-transaction";
@@ -133,10 +132,12 @@ function CheckoutContainerContent() {
               <AutosaveIndicator />
             </div>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <ScrollArea className="h-[calc(70vh-12rem)]">
+              <ScrollArea className="h-[calc(70vh-12rem)] overflow-visible">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Dados do Cliente</CardTitle>
+                    <h2 className="text-2xl font-semibold tracking-tight">
+                      Dados do Cliente
+                    </h2>
                   </CardHeader>
                   <CardContent>
                     <CustomerForm />
@@ -145,7 +146,9 @@ function CheckoutContainerContent() {
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Dados do Pagamento</CardTitle>
+                    <h2 className="text-2xl font-semibold tracking-tight">
+                      Dados do Pagamento
+                    </h2>
                   </CardHeader>
                   <CardContent>
                     <PaymentForm />

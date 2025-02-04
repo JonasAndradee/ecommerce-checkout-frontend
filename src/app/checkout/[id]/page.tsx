@@ -1,5 +1,11 @@
 import { CheckoutContainer } from "@/presentation/components/checkout/checkout-container";
 import { CartProvider } from "@/presentation/contexts/cart-context";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Finalizar Compra | E-commerce",
+  description: "Complete sua compra com segurança",
+};
 
 export default function CheckoutPage() {
   return (
