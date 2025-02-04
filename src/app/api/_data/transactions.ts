@@ -4,7 +4,7 @@ export const transactions: TransactionResponse[] = [
   {
     id: "eace0041-723c-44b2-887d-631878171bbf",
     status: "authorized",
-    amount: 1000,
+    amount: 2299.98,
     customer: {
       firstName: "João",
       lastName: "Silva",
@@ -40,7 +40,7 @@ export const transactions: TransactionResponse[] = [
         lastDigits: "4321",
         holderName: "João Silva",
         expirationDate: "12/2025",
-        installments: 1,
+        installments: 4,
       },
     },
   },
