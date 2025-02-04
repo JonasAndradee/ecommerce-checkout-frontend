@@ -30,14 +30,10 @@ Aplicação de checkout desenvolvida com Next.js 14 para processar transações 
 
 ### Listagem de Transações
 - Visualização de todas as transações
-- Filtros e busca
-- Exportação de dados
 - Paginação
 
 ### Detalhes da Transação
-- Informações completas da transação
-- Gerenciamento de status
-- Histórico de transações
+- Informações completas da transaçãos
 
 ## 🔧 Instalação
 
